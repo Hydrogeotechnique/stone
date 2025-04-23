@@ -71,23 +71,68 @@ button:hover {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Chaque note : fond opaque */
+/* Chaque note : fond par utilisateur */
 .note-item {
   display: flex;
   align-items: center;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: rgba(255, 255, 255, 0.92);
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.3s ease-out;
 }
 
-.note-item input[type="checkbox"] {
+.note-checkbox {
   margin-right: 10px;
 }
 
-/* Animation fade-in */
+/* Couleurs par utilisateur */
+.note-item.claire { background-color: #f1948a; }
+.note-item.eli { background-color: #82e0aa; }
+.note-item.matthias { background-color: #85c1e9; }
+.note-item.arnaud { background-color: #f9e79f; }
+.note-item.thomas { background-color: #d7bde2; }
+.note-item.unknown { background-color: rgba(255, 255, 255, 0.92); }
+
+/* Écran de sélection utilisateur */
+#userSelectScreen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.95);
+  text-align: center;
+}
+
+.user-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.user-btn {
+  padding: 20px 40px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.user-btn:hover {
+  transform: scale(1.05);
+}
+
+.user-btn.claire { background-color: #f1948a; }
+.user-btn.eli { background-color: #82e0aa; }
+.user-btn.matthias { background-color: #85c1e9; }
+.user-btn.arnaud { background-color: #f9e79f; color: #333; }
+.user-btn.thomas { background-color: #d7bde2; }
+
 @keyframes fadeIn {
   from {
     opacity: 0;

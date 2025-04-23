@@ -23,11 +23,13 @@ class Note(Base):
     
     id = Column(Integer, primary_key=True)
     text = Column(Text, nullable=False)
+    author = Column(String(50))
     
     def to_dict(self):
         return {
             "id": self.id,
-            "text": self.text
+            "text": self.text,
+            "author": self.author
         }
 
 # Créer les tables si elles n'existent pas
@@ -49,9 +51,10 @@ def handle_notes():
         elif request.method == 'POST':
             data = request.get_json()
             note_text = data.get('text', '').strip()
+            author = data.get('author', '')
             
             if note_text:
-                new_note = Note(text=note_text)
+                new_note = Note(text=note_text, author=author)
                 session.add(new_note)
                 session.commit()
                 return jsonify(new_note.to_dict()), 201
@@ -67,7 +70,7 @@ def handle_notes():
                 if note:
                     session.delete(note)
             
-            session.commit()
+            session.commit()  # Un seul commit après toutes les suppressions
             return jsonify({"status": "supprimé"}), 200
             
     except Exception as e:
