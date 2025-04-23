@@ -144,3 +144,7 @@ button:hover {
     transform: translateY(0);
   }
 }
+
+.note-item strong {
+  margin-right: 6px; /* Ajoute une marge à droite après le nom d'auteur */
+}
