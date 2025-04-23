@@ -43,6 +43,7 @@ body {
   width: 100%;
   font-size: 1em;
   resize: vertical;
+  height: 220px;
 }
 
 /* Boutons */
