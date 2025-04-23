@@ -1,0 +1,100 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.left-panel, .right-panel {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  /* Transparent : on ne met pas de background ici */
+}
+
+/* Bloc de saisie uniquement */
+.left-panel h2,
+#noteInput,
+.left-panel button {
+  background-color: rgba(255, 255, 255, 0.92);
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  font-size: 1em;
+}
+
+/* Boutons */
+button {
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #cce5ff;         /* bleu clair */
+  color: #000000;                    /* texte noir */
+  border: 1px solid #99cfff;
+  padding: 10px 15px;
+  margin-right: 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #b3d8ff;         /* bleu un peu plus foncé au survol */
+}
+
+/* Liste des notes (fond transparent global) */
+.right-panel h2 {
+  background-color: rgba(255, 255, 255, 0.92);
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Chaque note : fond opaque */
+.note-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.92);
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.note-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Animation fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classe appliquée aux nouvelles notes */
+.note-item {
+  animation: fadeIn 0.3s ease-out;
+}
+

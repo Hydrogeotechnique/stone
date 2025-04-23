@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Les cailloux dans la chaussure</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+  </head>
+<body>
+  <div class="container">
+    <!-- Partie gauche : saisie -->
+    <div class="left-panel">
+      <h2>Ajouter un cailloux</h2>
+      <textarea id="noteInput" rows="4" placeholder="Ajoute ton cailloux ici..."></textarea><br>
+      <button onclick="ajouterNote()">Ajouter le cailloux</button>
+      <button onclick="supprimerNotes()">Supprimer les cailloux sélectionnés</button>
+    </div>
+
+    <!-- Partie droite : affichage -->
+    <div class="right-panel">
+      <h2>Liste des cailloux</h2>
+      <div id="notesList" class="scrollable">
+        <!-- Les notes vont s'afficher ici -->
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
