@@ -1,3 +1,8 @@
+/* Applique le box-sizing border-box partout pour aligner plus facilement les tailles */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -17,7 +22,6 @@ body {
 .left-panel, .right-panel {
   flex: 1;
   padding: 20px;
-  box-sizing: border-box;
   /* Transparent : on ne met pas de background ici */
 }
 
@@ -34,10 +38,11 @@ body {
   border: none;
 }
 
-textarea {
+/* Zone de saisie utilisateur */
+#noteInput {
   width: 100%;
-  resize: vertical;
   font-size: 1em;
+  resize: vertical;
 }
 
 /* Boutons */
@@ -75,6 +80,7 @@ button:hover {
   background-color: rgba(255, 255, 255, 0.92);
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-out;
 }
 
 .note-item input[type="checkbox"] {
@@ -92,9 +98,3 @@ button:hover {
     transform: translateY(0);
   }
 }
-
-/* Classe appliquée aux nouvelles notes */
-.note-item {
-  animation: fadeIn 0.3s ease-out;
-}
-
